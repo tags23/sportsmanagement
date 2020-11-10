@@ -24,7 +24,7 @@ class Competition(models.Model):
     date = models.DateField(blank=False, null=True)
     time = models.TimeField(blank=False, null=True)
     sport = models.CharField(max_length=100, blank=False, null=True)
-    comp_format = models.CharField(max_length=100, blank=False, null=True)
+    comp_format = models.CharField(max_length=100, blank=False, null=True)  # should only have a few available fields...
     comp_name = models.CharField(max_length=200, blank=False, null=True)
     no_of_participants = models.IntegerField()
 
