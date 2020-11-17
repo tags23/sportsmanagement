@@ -22,3 +22,5 @@ def generic_form(request):
         # Add code to process the form
     else:
         form = CompetitionForm()
+
+    return render(request, 'sms/form.html', context={'form': form, 'submit_text': "Pievienot"})
