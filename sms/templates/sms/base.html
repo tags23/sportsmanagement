@@ -10,6 +10,10 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {# bleh #}
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 {% block body_class %}
 {# This should not stay that way, leave it only for now, so we can test some proper templating. #}
@@ -34,10 +38,10 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Pievienot jaunas sacensības</a>
-    <a href="#">Sacensību saraksts</a>
+    <a href="/test_form/">Pievienot jaunas sacensības</a>
+    <a href="/home">Sacensību saraksts</a>
   </div>
-  <a href="#tiesnesi">Tiesneši</a>
+  <a href="#">Tiesneši</a>
   <script type="text/javascript" src="{% static 'js/dropdown.js' %}"></script>
 </div>
 {% endblock %}

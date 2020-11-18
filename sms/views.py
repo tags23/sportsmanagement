@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .forms import CompetitionForm
 
@@ -19,8 +19,15 @@ def generic_form(request):
     """
     if request.method == 'POST':
         form = CompetitionForm(request.POST)
-        # Add code to process the form
+
+        if form.is_valid():
+            new_form_item = form.save()
+            return HttpResponseRedirect('/TEST_FORM_SAVED/')
     else:
         form = CompetitionForm()
 
     return render(request, 'sms/form.html', context={'form': form, 'submit_text': "Pievienot"})
+
+
+def saved_test_form(request):
+    return render(request, 'sms/form_saved.html')
