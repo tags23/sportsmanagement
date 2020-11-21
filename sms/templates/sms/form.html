@@ -4,9 +4,17 @@
 {#https://docs.djangoproject.com/en/3.1/topics/forms/#looping-over-the-form-s-fields#}
 
 {% block content %}
-    <form action="" method="post">
+<div class="form-page">
+    <form action="" method="post" class="form-field">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="{{ submit_text }}">
+    {% for field in form %}
+    <p>{{ field.label_tag }} {{ field }}</p>
+    {% if not forloop.last %}
+    <hr/>
+    {% endif %}
+    {% endfor %}
+    <input type="submit" class="btn btn-primary" value="{{ submit_text }}">
     </form>
+    </div>
+
 {% endblock %}

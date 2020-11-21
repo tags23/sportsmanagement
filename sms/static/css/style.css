@@ -91,9 +91,9 @@ header .heading h1 {
 
   /* Main content */
   .main {
-    margin-left: 200px; /* Same as the width of the sidenav */
     font-size: 20px; /* Increased text to enable scrolling */
     padding: 0px 10px;
+    padding-left: 210px;
   }
 
   /* Add an active class to the active dropdown button */
@@ -117,3 +117,37 @@ header .heading h1 {
     float: right;
     padding-right: 8px;
   }
+
+  #content_base {
+    margin-top: 50px;
+  }
+
+  .crumbtop {
+    padding: 0 0 0 200px;
+  }
+
+  /* form.html below */
+
+.form-field .btn {
+  float: right;
+}
+
+.form-field p {
+  display: flex;
+  /* border-bottom: 1px solid #2d9cdb;
+  padding-bottom: 15px; */
+}
+
+/* .form-field .last-child {
+  border: 0;
+} */
+
+.form-field p label {
+  margin-right: 10px;
+  min-width: 200px;
+  text-align: right;
+}
+
+hr {
+  border: 1px solid #2d9cdb;
+}
