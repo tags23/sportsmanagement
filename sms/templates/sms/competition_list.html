@@ -1,0 +1,12 @@
+{% extends "sms/base.html" %}
+
+
+{% block content %}
+<div class="competition-list">
+    {% for competition in object_list %}
+        <p>{{ competition.comp_name }}</p>
+        <p>{{ competition.date }}</p>
+        <hr/>
+    {% endfor %}
+</div>
+{% endblock %}

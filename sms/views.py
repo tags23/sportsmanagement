@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.views.generic import ListView
 
 from .forms import CompetitionForm
+from .models import Competition
 
 
 def login(request):
@@ -31,3 +33,14 @@ def generic_form(request):
 
 def saved_test_form(request):
     return render(request, 'sms/form_saved.html')
+
+
+class GenericList(ListView):
+    """
+    A default view that displays any of the necessary
+    lists we have in our system
+    """
+    model = Competition  # Note: the template name 'competition_list.html' is inferred from the model
+    # an object_list iterable is passed to the template
+
+
