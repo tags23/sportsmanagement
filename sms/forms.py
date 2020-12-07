@@ -14,5 +14,6 @@ class CompetitionForm(forms.ModelForm):
             'sport': forms.TextInput(attrs={'class': 'form-control'}),
             'comp_format': forms.TextInput(attrs={'class': 'form-control'}),
             'comp_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'no_of_participants': forms.NumberInput(attrs={'class': 'form-control'})
+            'no_of_participants': forms.NumberInput(attrs={'class': 'form-control'}),
+            'comp_status': forms.TextInput(attrs={'class': 'form-control'}),
         }

@@ -27,6 +27,7 @@ class Competition(models.Model):
     comp_format = models.CharField(max_length=100, blank=False, null=True)  # should only have a few available fields...
     comp_name = models.CharField(max_length=200, blank=False, null=True)
     no_of_participants = models.IntegerField()
+    comp_status = models.CharField(max_length=50, blank=False, null=True)
 
 
 class CompType(models.Model):  # type...?

@@ -25,6 +25,8 @@ def generic_form(request):
         if form.is_valid():
             new_form_item = form.save()
             return HttpResponseRedirect('/TEST_FORM_SAVED/')
+        else:
+            print("Error with form: " + str(form.errors))
     else:
         form = CompetitionForm()
 
