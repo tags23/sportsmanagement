@@ -37,6 +37,10 @@ def saved_test_form(request):
     return render(request, 'sms/form_saved.html')
 
 
+def bracket(request):
+    return render(request, 'sms/bracket.html', context={"title": "SMS: Bracket"})
+
+
 class GenericList(ListView):
     """
     A default view that displays any of the necessary
