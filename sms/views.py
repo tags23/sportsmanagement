@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView
+from django.core import serializers
 
 from .forms import CompetitionForm
-from .models import Competition
+from .models import Competition, Participant
 
 
 def login(request):
@@ -38,7 +39,10 @@ def saved_test_form(request):
 
 
 def bracket(request):
-    return render(request, 'sms/bracket.html', context={"title": "SMS: Bracket"})
+    participants = Participant.objects.all()
+    part_serialized = serializers.serialize('json', participants)
+    print(part_serialized)
+    return render(request, 'sms/bracket.html', context={"title": "SMS: Bracket", "participants": part_serialized})
 
 
 class GenericList(ListView):

@@ -7,14 +7,14 @@
     <h1>Bracket</h1>
     <div class="tournament">
         <script>
-            var tournamentData = {
+            let participant_data = {{ participants | safe }}; // Object count is also probably needed
+            let tournamentData = {
+                // loops and validations needed
                 teams: [
-                    {% for competition in object_list %}
-                        ['{{ competition.comp_name }}', "T2"],
-                        ["T3", "T4"],
-                        ["T5", "T6"],
-                        ["T7", "T8"]
-                    {% endfor %}
+                    [participant_data[0].fields.name, participant_data[1].fields.name],
+                    [participant_data[2].fields.name, participant_data[3].fields.name],
+                    [participant_data[4].fields.name, participant_data[5].fields.name],
+                    [participant_data[6].fields.name, participant_data[7].fields.name]
                 ],
                 results: [
                     [[1, 3], [1, 4], [3, 2], [5, 1]], [[2, 3], [3, 2]],
@@ -23,7 +23,8 @@
             }
 
             $('.tournament').bracket({
-                init: tournamentData
+                init: tournamentData,
+                centerConnectors: true
             });
         </script>
     </div>
