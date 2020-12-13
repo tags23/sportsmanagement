@@ -1,0 +1,13 @@
+{% extends "sms/base.html" %}
+
+{# This file is called user_list, because django automatically #}
+{# generates file names from models. #}
+
+{% block content %}
+<div class="referee-list">
+    <button type="button"
+            class="btn btn-outline-primary"
+            onclick="location.href='/referee_form'">Pievienot tiesnesi</button>
+    referees
+</div>
+{% endblock %}

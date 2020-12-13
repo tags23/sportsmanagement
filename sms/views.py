@@ -15,13 +15,14 @@ def home(request):
     return render(request, 'sms/home.html', context={"title": "SMS: Home"})
 
 
-def generic_form(request):
+def generic_form(request, form_object):
     """
     A default form view that should get the model from context, to automatically
     generate the front-end input fields.
     """
+
     if request.method == 'POST':
-        form = CompetitionForm(request.POST)
+        form = form_object(request.POST)
 
         if form.is_valid():
             new_form_item = form.save()
@@ -29,7 +30,9 @@ def generic_form(request):
         else:
             print("Error with form: " + str(form.errors))
     else:
-        form = CompetitionForm()
+        # request context is important here
+        # TODO: we have to know if it's in edit mode or new item mode
+        form = form_object()
 
     return render(request, 'sms/form.html', context={'form': form, 'submit_text': "Pievienot"})
 
@@ -50,7 +53,7 @@ class GenericList(ListView):
     A default view that displays any of the necessary
     lists we have in our system
     """
-    model = Competition  # Note: the template name 'competition_list.html' is inferred from the model
+    # model = Competition  # Note: the template name 'competition_list.html' is inferred from the model
     # an object_list iterable is passed to the template
 
 

@@ -7,9 +7,15 @@
         <p>{{ competition.comp_name }}</p>
         <p>{{ competition.date }}</p>
         <p class="text-danger">{{ competition.comp_status }}</p>
-        <button type="button" class="btn btn-outline-primary">Rezultāti</button>
-        <button type="button" class="btn btn-outline-primary">Dalībnieki</button>
-        <button type="button" class="btn btn-outline-primary">Info</button>
+        <button type="button"
+                class="btn btn-outline-primary"
+                onclick="location.href='/bracket'">Rezultāti</button>
+        <button type="button"
+                class="btn btn-outline-primary"
+                onclick="location.href='/participant_list'">Dalībnieki</button>
+        <button type="button"
+                class="btn btn-outline-primary"
+                onclick="location.href='/competition_form'">Info</button>
         <hr/>
     {% endfor %}
 </div>
