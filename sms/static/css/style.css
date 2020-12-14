@@ -8,6 +8,7 @@ header {
     padding: 12px 0;
     width: 100%;
     border-bottom: 1px solid #fff;
+    position: fixed;
 }
 
 header .heading {
@@ -66,6 +67,7 @@ header .heading h1 {
     left: 0;
     background-color: #2d9cdb;
     overflow-x: hidden;
+    margin-top: 55px;
   }
 
   /* Style the sidenav links and the dropdown button */
@@ -123,7 +125,7 @@ header .heading h1 {
   }
 
   .crumbtop {
-    padding: 0 0 0 200px;
+    padding: 55px 0 0 200px;
   }
 
   /* form.html below */
@@ -134,13 +136,7 @@ header .heading h1 {
 
 .form-field p {
   display: flex;
-  /* border-bottom: 1px solid #2d9cdb;
-  padding-bottom: 15px; */
 }
-
-/* .form-field .last-child {
-  border: 0;
-} */
 
 .form-field p label {
   margin-right: 10px;
