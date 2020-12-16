@@ -23,6 +23,10 @@ header .heading h1 {
     line-height: 1;
 }
 
+#login-header {
+    position: static;
+}
+
 /* Registration page */
 .registration-page {
     display: flex;
